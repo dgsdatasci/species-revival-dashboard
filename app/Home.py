@@ -19,7 +19,7 @@ species = st.sidebar.selectbox("Choose a species", df["Species Name"])
 
 # Show selected species info
 st.subheader(f"Species Profile: {species}")
-info = df[df["Species"] == species].squeeze()
+info = df[df["Species Name"] == species].squeeze()
 
 st.markdown(f"""
 - **Status:** {info['Status']}
