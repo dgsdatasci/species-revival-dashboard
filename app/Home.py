@@ -15,7 +15,7 @@ st.title("🧬 Species Revival Dashboard")
 st.sidebar.title("🔍 Explore")
 
 # Sidebar species selection
-species = st.sidebar.selectbox("Choose a species", df["Species"])
+species = st.sidebar.selectbox("Choose a species", df["Species Name"])
 
 # Show selected species info
 st.subheader(f"Species Profile: {species}")
