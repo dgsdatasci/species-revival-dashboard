@@ -22,10 +22,11 @@ st.subheader(f"Species Profile: {species}")
 info = df[df["Species Name"] == species].squeeze()
 
 st.markdown(f"""
+- **Species Name:** {info['Species Name']}
 - **Status:** {info['Status']}
-- **Extinction Year:** {info['Extinction Year'] or 'N/A'}
-- **Genome Available:** {info['Genome Available']}
+- **Year Extinct:** {info['Year Extinct']}
 - **Region:** {info['Region']}
+- **Genomic Data:** {info['Genomic Data']}
 - **Notes:** {info['Notes']}
 """)
 
