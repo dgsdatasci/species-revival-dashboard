@@ -4,11 +4,8 @@ from app_utils.iucn_api import get_species_status
 from app_utils.gbif_api import get_species_occurrences
 
 st.write("🔎 Testing APIs...")
-test_iucn = get_species_status("Panthera leo")  # Known IUCN species
+test_iucn = get_species_status("Panthera%20leo")
 st.write("IUCN Test:", test_iucn)
-
-test_gbif = get_species_occurrences("Elasmotherium")  # Your working one
-st.write("GBIF Test:", test_gbif)
 
 st.set_page_config(page_title="Species Revival Dashboard", layout="wide")
 
