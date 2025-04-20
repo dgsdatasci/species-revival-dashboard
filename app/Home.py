@@ -32,6 +32,10 @@ if species_name:
     - **Notes:** {info['Notes']}
     """)
 
+    # Clean the species name for API querying
+    query_name = species_name.strip().replace(" ", "%20")
+    st.write(f"🔍 Querying APIs for: {species_name}")
+    
     # Show IUCN status
     status_data = get_species_status(species_name)
     if status_data and status_data.get("result"):
@@ -47,5 +51,17 @@ if species_name:
         st.markdown(f"🗺️ **GBIF Sightings:** {num_sightings}")
     else:
         st.markdown("⚠️ No GBIF data available.")
+
+    # Temporary testing of known species
+    st.markdown("---")
+    st.markdown("### 🔬 API Test Results")
+
+    st.write("IUCN test for `Panthera leo`:")
+    test_iucn = get_species_status("Panthera%20leo")
+    st.json(test_iucn)
+
+    st.write("GBIF test for `Elasmotherium`:")
+    test_gbif = get_species_occurrences("Elasmotherium")
+    st.json(test_gbif)
 
 
