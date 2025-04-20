@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
-from app.api_utils.iucn_api import get_species_status
-from app.api_utils.gbif_api import get_species_occurrences
+from api_utils.iucn_api import get_species_status
+from api_utils.gbif_api import get_species_occurrences
 
 st.set_page_config(page_title="Species Revival Dashboard", layout="wide")
 
