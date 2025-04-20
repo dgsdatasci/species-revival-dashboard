@@ -6,7 +6,7 @@ from app_utils.iucn_api import get_species_status
 from app_utils.gbif_api import get_species_occurrences
 
 st.write("🔎 Testing APIs...")
-test_iucn = get_species_status("Panthera%20leo")
+test_iucn = get_species_status("Panther leo")
 st.write("IUCN Test:", test_iucn)
 
 # Load the species list
