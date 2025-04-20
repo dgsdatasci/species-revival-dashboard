@@ -1,4 +1,6 @@
 import streamlit as st
+st.set_page_config(page_title="Species Revival Dashboard", layout="wide")
+
 import pandas as pd
 from app_utils.iucn_api import get_species_status
 from app_utils.gbif_api import get_species_occurrences
@@ -6,8 +8,6 @@ from app_utils.gbif_api import get_species_occurrences
 st.write("🔎 Testing APIs...")
 test_iucn = get_species_status("Panthera%20leo")
 st.write("IUCN Test:", test_iucn)
-
-st.set_page_config(page_title="Species Revival Dashboard", layout="wide")
 
 # Load the species list
 @st.cache_data
