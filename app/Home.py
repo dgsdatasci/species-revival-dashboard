@@ -35,11 +35,7 @@ if species_name:
     # Clean the species name for API querying
     query_name = species_name.strip().replace(" ", "%20")
     st.write(f"🔍 Querying APIs for: {species_name}")
-    
-    # Wikidata test
-    st.write("IUCN test from Wikidata for `Panthera leo`:")
-    test_iucn = get_iucn_status_from_wikidata("Panthera leo")
-    st.write(test_iucn)
+
 
     # Show GBIF sightings
     gbif_data = get_species_occurrences(species_name)
