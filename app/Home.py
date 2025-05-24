@@ -6,7 +6,6 @@ from app_utils.wikidata_sparql import get_iucn_status_from_wikidata
 from app_utils.gbif_api import get_species_occurrences
 
 st.write("🔎 Testing APIs...")
-test_iucn = get_species_status("Panther leo")
 st.write("IUCN Test:", test_iucn)
 
 # Load the species list
@@ -40,9 +39,10 @@ if species_name:
     query_name = species_name.strip().replace(" ", "%20")
     st.write(f"🔍 Querying APIs for: {species_name}")
     
-    # Show IUCN status
-    status_label = get_iucn_status_from_wikidata(species_name)
-    st.markdown(f"🛡️ **IUCN Status (Wikidata):** {status_label}")
+    # Wikidata test
+    st.write("IUCN test from Wikidata for `Panthera leo`:")
+    test_iucn = get_iucn_status_from_wikidata("Panthera leo")
+    st.write(test_iucn)
 
     # Show GBIF sightings
     gbif_data = get_species_occurrences(species_name)
