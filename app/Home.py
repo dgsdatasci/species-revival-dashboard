@@ -2,7 +2,7 @@ import streamlit as st
 st.set_page_config(page_title="Species Revival Dashboard", layout="wide")
 
 import pandas as pd
-from app_utils.iucn_api import get_species_status
+from app_utils.wikidata_sparql import get_iucn_status_from_wikidata
 from app_utils.gbif_api import get_species_occurrences
 
 st.write("🔎 Testing APIs...")
@@ -41,12 +41,8 @@ if species_name:
     st.write(f"🔍 Querying APIs for: {species_name}")
     
     # Show IUCN status
-    status_data = get_species_status(species_name)
-    if status_data and status_data.get("result"):
-        category = status_data["result"][0].get("category", "N/A")
-        st.markdown(f"🔴 **Conservation Status (IUCN):** {category}")
-    else:
-        st.markdown("⚠️ No IUCN data available.")
+    status_label = get_iucn_status_from_wikidata(species_name)
+    st.markdown(f"🛡️ **IUCN Status (Wikidata):** {status_label}")
 
     # Show GBIF sightings
     gbif_data = get_species_occurrences(species_name)
