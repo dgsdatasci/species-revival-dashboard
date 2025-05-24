@@ -53,16 +53,6 @@ if species_name:
     else:
         st.markdown("⚠️ No GBIF data available.")
 
-    # Temporary testing of known species
-    st.markdown("---")
-    st.markdown("### 🔬 API Test Results")
 
-    st.write("IUCN test from Wikidata for `Panthera leo`:")
-    test_iucn = get_iucn_status_from_wikidata("Panthera leo")
-    st.write(test_iucn)
-    
-    st.write("GBIF test for `Elasmotherium`:")
-    test_gbif = get_species_occurrences("Elasmotherium")
-    st.json(test_gbif)
 
 
