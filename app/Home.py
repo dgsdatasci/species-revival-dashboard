@@ -5,7 +5,8 @@ import pandas as pd
 from app_utils.wikidata_sparql import get_iucn_status_from_wikidata
 from app_utils.gbif_api import get_species_occurrences
 
-st.write("🔎 Testing APIs...")
+st.write("🔎 Testing Wikidata IUCN API...")
+test_iucn = get_iucn_status_from_wikidata("Panthera leo")
 st.write("IUCN Test:", test_iucn)
 
 # Load the species list
